@@ -13,20 +13,21 @@
 
   <div class="field">
     <%= f.label :date %><br>
-    <%= f.datetime_select :date %>
+    <%= f.datetime_select :date, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :company %><br>
-    <%= f.text_field :company %>
+    <%= f.text_field :company, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :tax %><br>
-    <%= f.text_field :tax %>
+    <%= f.text_field :tax, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :salesperson %><br>
-    <%= f.text_field :salesperson %>
+    <%= f.text_field :salesperson, class: 'form-control' %>
   </div>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>

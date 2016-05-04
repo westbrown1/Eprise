@@ -1,24 +1,40 @@
-<p id="notice"><%= notice %></p>
+<!-- row -->
+<div class="row">
+	 <!-- col-md-6 col-md-offset-3 -->
+	 <div class="col-md-6 col-md-offset-3">
+	 	 <!-- panel panel-success -->
+	 	 <div class="panel panel-success">
+	 	 	 <!-- panel-heading -->
+	 	 	 <div class="panel-heading">
+	 	 	 </div>
+	 	 	 <!-- panel-body -->
+	 	 	 <div class="panel-body">
+	 	 	 	 
+				<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @invoice.date %>
-</p>
+				<p>
+				  <strong>Date:</strong>
+				  <%= @invoice.date %>
+				</p>
 
-<p>
-  <strong>Company:</strong>
-  <%= @invoice.company %>
-</p>
+				<p>
+				  <strong>Company:</strong>
+				  <%= @invoice.company %>
+				</p>
 
-<p>
-  <strong>Tax:</strong>
-  <%= @invoice.tax %>
-</p>
+				<p>
+				  <strong>Tax:</strong>
+				  <%= @invoice.tax %>
+				</p>
 
-<p>
-  <strong>Salesperson:</strong>
-  <%= @invoice.salesperson %>
-</p>
+				<p>
+				  <strong>Salesperson:</strong>
+				  <%= @invoice.salesperson %>
+				</p>
 
-<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
-<%= link_to 'Back', invoices_path %>
+				<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
+				<%= link_to 'Back', invoices_path %>
+			</div><!-- /panel-body -->
+	 	 </div><!-- /panel panel-success -->
+	 </div><!-- /col-md-6 col-md-offset-3 -->
+</div><!-- /row -->

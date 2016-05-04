@@ -38,8 +38,30 @@
 
 <!-- container -->
 <div class="container">
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
+
+<% if flash[:notice] %>
+<!-- alert alert-success -->
+<div class="alert alert-success">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	<%= flash[:notice] %>
+</div><!-- /alert alert-success -->
+
+<% elsif flash[:error] %>	
+<!-- alert alert-danger -->
+<div class="alert alert-danger">
+	<button class="close" type="button" data-dismiss="alert">&times;</button>
+	<%= flash[:error] %>
+</div><!-- /alert alert-danger -->
+
+<% elsif flash[:alert] %>
+<!-- alert -->
+<div class="alert">
+	 <button class="close" type="button" data-dismiss="alert">&times;</button>
+	 <%= flash[:alert] %>
+</div><!-- /alert -->
+
+<% end %>
+	
 	<%= yield %> 
 	<hr>
 	<center><p>&copy; - <%= Time.now.year %> West Brown</p></center>

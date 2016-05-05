@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :companies
+  resources :companies do 
+    collection { post :import }
+  end
+
   get 'welcome/index'
 
   get 'welcome/about'

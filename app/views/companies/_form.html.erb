@@ -13,20 +13,21 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :manager %><br>
-    <%= f.text_field :manager %>
+    <%= f.text_field :manager, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.text_field :status %>
+    <%= f.text_field :status, class: 'form-control' %>
   </div>
   <div class="field">
     <%= f.label :terms %><br>
-    <%= f.number_field :terms %>
+    <%= f.number_field :terms, class: 'form-control' %>
   </div>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>

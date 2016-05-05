@@ -27,6 +27,11 @@
     <%= f.label :salesperson %><br>
     <%= f.text_field :salesperson, class: 'form-control' %>
   </div>
+  <!-- field -->
+  <div class="field">
+     <%= f.label 'Status', class: 'form-control' %>
+     <%= f.select(:status_type, options_for_select([['Paid', 'Paid'], ['Pending', 'Pending']])) %>
+  </div><!-- /field -->
   <br>
   <div class="actions">
     <%= f.submit %>

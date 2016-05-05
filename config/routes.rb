@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :purchases
+
   resources :employees
   resources :companies do 
     collection { post :import }
@@ -18,7 +18,11 @@ Rails.application.routes.draw do
   get 'welcome/features'
 
   devise_for :users
-  resources :invoices
+
+  resources :invoices do
+      resources :purchases, except: [:index], controller: 'invoices/purchases'  
+  end
+
   root to: 'invoices#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

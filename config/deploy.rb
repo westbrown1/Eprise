@@ -2,7 +2,7 @@
 lock '3.6.1'
 
 set :application, 'accesstech'
-set :repo_url, 'git@github.com:westbrown1/eprise.git'
+set :repo_url, 'https://github.com/westbrown1/eprise'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

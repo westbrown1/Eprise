@@ -1,8 +1,11 @@
-<p id="notice"><%= notice %></p>
+<!-- container -->
+<div class="container">
+<div class="row" id="panmargin">
+   <p id="notice"><%= notice %></p>
 
 <h1>Listing Employees</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -18,9 +21,9 @@
         <td><%= employee.name %></td>
         <td><%= employee.phone %></td>
         <td><%= employee.job_type %></td>
-        <td><%= link_to 'Show', employee %></td>
-        <td><%= link_to 'Edit', edit_employee_path(employee) %></td>
-        <td><%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', employee, class: 'btn btn-mini btn-default' %></td>
+        <td><%= link_to 'Edit', edit_employee_path(employee), class: 'btn btn-mini btn-success' %></td>
+        <td><%= link_to 'Destroy', employee, method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,3 +32,6 @@
 <br>
 
 <%= link_to 'New Employee', new_employee_path %>
+</div>
+</div><!-- /container -->
+

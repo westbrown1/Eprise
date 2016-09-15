@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
 
   resources :employees
   resources :companies do 
@@ -11,14 +12,14 @@ Rails.application.routes.draw do
 
   get 'welcome/contact'
 
-  get 'welcome/faq'
-
   get 'welcome/pricing'
 
-  get 'welcome/features'
+  get 'welcome/solution'
 
-  devise_for :users
+  get 'welcome/what'
 
+  get 'welcome/menu'
+  
   resources :invoices do
       resources :purchases, except: [:index], controller: 'invoices/purchases'  
   end

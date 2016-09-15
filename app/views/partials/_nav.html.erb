@@ -1,0 +1,33 @@
+<div id="mySidenav" class="sidenav">
+
+	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>		
+	
+	  <%= link_to 'AccessTech.io Home', welcome_index_path %>
+  	  <%= link_to 'About Us', welcome_about_path %>
+  	  <%= link_to 'Contact Us', welcome_contact_path %>
+  	  <%= link_to 'Pricing', welcome_pricing_path %>
+	  <%= link_to 'Why Us?', welcome_solution_path %>
+	  <%= link_to 'What We Can Do', welcome_what_path %>
+	  
+<% if current_user %>
+	<%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+
+	<!-- dropdown -->	
+	<div class="dropdown">	
+		<a class="dropdown-toggle" data-toggle="dropdown" id="menu1">
+		 	<span class="caret"></span> Admin
+		</a>
+		<ul class="dropdown-menu" role="menu" aria-labeledby="menu1">
+			<li><%= link_to 'Invoices', invoices_path %></li>
+			<li><%= link_to 'Companies', companies_path %></li>
+			<li><%= link_to 'Employees', employees_path %></li>
+		</ul>
+	</div><!-- /dropdown -->
+<% else %>
+	<%= link_to 'Sign In', new_user_session_path %>	
+<% end %> 
+
+			    
+		
+
+</div>

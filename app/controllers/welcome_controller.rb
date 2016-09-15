@@ -1,4 +1,5 @@
 class WelcomeController < ApplicationController
+
   def index
   end
 
@@ -8,12 +9,7 @@ class WelcomeController < ApplicationController
   def contact
   end
 
-  def faq
-  end
-
   def pricing
   end
 
-  def features
-  end
 end

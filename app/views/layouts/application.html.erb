@@ -1,139 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Eprise</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <style>
-body {
-    font-family: "Lato", sans-serif;
-}
-
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    text-align:center;
-}
-
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s
-
-}
-
-.sidenav a:hover{
-    color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-</style>
+<%= render 'partials/head' %>
 </head>
-<body>
-	 		
-	<div id="mySidenav" class="sidenav">
-	  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-	  <li><%= link_to 'Home', welcome_index_path %></li>
-  	  <li><%= link_to 'About Us', welcome_about_path %> </li>
-  	  <li><%= link_to 'Contact Us', welcome_contact_path %> </li>
-  	  <li><%= link_to 'Features', welcome_features_path %> </li>
-  	  <li><%= link_to 'FAQs', welcome_faq_path %> </li>
-  	  <li><%= link_to 'Pricing', welcome_pricing_path %> </li>
+<body>	
+	<!-- container -->
+	<div class="container">		 
+		 <span class="navbar-fixed-top" onclick="openNav()"><h4>&#9776; <i>AccessTech.io</i></h4></span>
+		 <%= render 'partials/nav' %>
+	</div><!-- /container -->	
 
-			<% if current_user %>
-					<li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> </li>
-			<!-- dropdown -->
-			<div class="dropdown">
-				 <a class="dropdown-toggle" data-toggle="dropdown" id="menu1">
-				 	<span class="caret"></span> Admin
-				 </a>
-				 <ul class="dropdown-menu" role="menu" aria-labeledby="menu1">
-				 	<li><%= link_to 'Invoices', invoices_path %></li>
-				 	<li><%= link_to 'Companies', companies_path %> </li>
-				 	<li><%= link_to 'Employees', employees_path %> </li>
-				 </ul>
-			</div><!-- /dropdown -->			
-			
-			<% else %>
-			<li><%= link_to 'Sign Up', new_user_registration_path %> </li>
-			<li><%= link_to 'Sign In', new_user_session_path %> </li>
-			<% end %>
-		</div>
-		 
-<!-- container -->
-<div class="container">
-
-<% if flash[:notice] %>
-<!-- alert alert-success -->
-<div class="alert alert-success">
-	<button class="close" type="button" data-dismiss="alert">&times;</button>
-	<%= flash[:notice] %>
-</div><!-- /alert alert-success -->
-
-<% elsif flash[:error] %>	
-<!-- alert alert-danger -->
-<div class="alert alert-danger">
-	<button class="close" type="button" data-dismiss="alert">&times;</button>
-	<%= flash[:error] %>
-</div><!-- /alert alert-danger -->
-
-<% elsif flash[:alert] %>
-<!-- alert -->
-<div class="alert">
-	 <button class="close" type="button" data-dismiss="alert">&times;</button>
-	 <%= flash[:alert] %>
-</div><!-- /alert -->
-
-<% end %>
-
-<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+		<%= yield %>
 	
-	<%= yield %> 
+	<div id="header">
+		<% if flash[:notice] %>
+		<!-- alert alert-success -->
+		<div class="alert alert-success">
+			<button class="close" type="button" data-dismiss="alert">&times;</button>
+			<%= flash[:notice] %>
+		</div><!-- /alert alert-success -->
 
-	<hr>
-	<center><p>&copy; - <%= Time.now.year %> West Brown</p></center>
+		<% elsif flash[:error] %>	
+		<!-- alert alert-danger -->
+		<div class="alert alert-danger">
+			<button class="close" type="button" data-dismiss="alert">&times;</button>
+			<%= flash[:error] %>
+		</div><!-- /alert alert-danger -->
+
+		<% elsif flash[:alert] %>
+		<!-- alert -->
+		<div class="alert">
+			 <button class="close" type="button" data-dismiss="alert">&times;</button>
+			 <%= flash[:alert] %>
+		</div><!-- /alert -->
+
+		<% end %>
+	</div>
 	
-</div><!-- /container -->
-<script>
-function openNav() {
-    document.getElementById("mySidenav").style.width = "100%";
-}
+	<div id="footer">
+		<hr>
+		<center><p class="footer1">&copy; - <%= Time.now.year %> AccessTech.io, Wilmington NC</p></center>
+	</div>	
 
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-</script>
+<%= render 'partials/js' %>
 </body>
 </html>
-
-
-
-
-
-
-
-     
-
